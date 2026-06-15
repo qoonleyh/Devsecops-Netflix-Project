@@ -11,7 +11,7 @@ practices.
 
 ## Project Highlights
 
-- Full CI/CD pipeline built in Jenkins with 9 automated stages
+- Full CI/CD pipeline built in Jenkins with 11 automated stages
 - Security integrated at every stage — SAST, dependency scanning, 
   and container image scanning before deployment
 - Monitoring stack built on Prometheus and Grafana covering both 
