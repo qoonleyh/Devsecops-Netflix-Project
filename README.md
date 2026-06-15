@@ -117,7 +117,7 @@ Integrated three security tools into the pipeline before any deployment:
 
 ### Phase 3 — CI/CD Pipeline (Jenkins)
 
-Built a fully automated Jenkins pipeline with 9 stages running on 
+Built a fully automated Jenkins pipeline with 11 stages running on 
 every commit:
 
 1. Clean workspace
