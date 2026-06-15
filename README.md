@@ -1,6 +1,6 @@
 # Netflix Clone — DevSecOps Pipeline on AWS
 
-Inspired by @aloffawy, this is a personal end-to-end DevSecOps project deploying a Netflix clone 
+This is a personal end-to-end DevSecOps project deploying a Netflix clone 
 application on AWS by implementing a full CI/CD pipeline with integrated 
 security scanning, monitoring, and GitOps-based Kubernetes deployment.
 
@@ -662,29 +662,29 @@ changed authentication methods, renamed AWS console fields,  arose from the chan
 Learning to read error messages, search for root causes, and fix problems 
 independently was as valuable as the tools themselves.
 
-**Container security is not optional**
+**Container security is not optional:**  
 Trivy identified a vulnerability in the nginx:stable-alpine base image 
 on the first scan. In a production context this would require updating 
 to a patched image version before deployment. Integrating this check 
 into the pipeline means it happens automatically on every build rather 
 than being a manual afterthought.
 
-**Kubernetes adds complexity but also capability**
+**Kubernetes adds complexity but also capability:**  
 Moving from a single Docker container to a Kubernetes deployment via 
-ArgoCD introduced significant additional configuration — IAM roles, 
-node groups, namespaces, service types — but the result is a 
+ArgoCD introduced significant additional configuration. Configurations such as IAM roles, 
+node groups, namespaces, and service types were introduced. The successful configuration resulted in a 
 production-grade deployment model with automatic reconciliation, 
 rollback capability, and GitOps auditability.
 
-**Monitoring should cover the full stack**
+**Monitoring should cover the full stack:**  
 Setting up Prometheus and Grafana to cover both the EC2 instance and 
 Kubernetes nodes gave a complete picture of resource utilisation across 
 the entire infrastructure. Without both layers, issues in either 
 environment would be invisible.
 
-**Infrastructure as a security boundary**
+**Infrastructure as a security boundary:**  
 Security groups, IAM roles, and network configuration are not just 
-operational concerns — they directly determine what is and is not 
+operational concerns, they directly determine what is and is not 
 accessible. EKS Auto Mode in particular surfaced how managed 
 infrastructure can abstract away security controls that you would 
 normally configure directly.
@@ -693,12 +693,12 @@ normally configure directly.
 
 ### Process
 
-**Document as you go**
+**Document as you go:**  
 Screenshots taken during the build were essential for this README. 
 Going back to recreate evidence after the fact is significantly harder 
 than capturing it at the time.
 
-**Break problems into layers**
+**Break problems into layers:**  
 When a pipeline stage fails, the error is often in a different layer 
 than where it appears. The Docker login failure appeared to be a 
 credentials problem but was actually a client version problem. Reading 
@@ -706,7 +706,7 @@ the full error message and working backwards to the root cause is a
 more reliable debugging approach than fixing the first thing that 
 looks wrong.
 
-**Cost awareness matters in cloud projects**
+**Cost awareness matters in cloud projects:**  
 Running Jenkins, SonarQube, Prometheus, Grafana, and an EKS cluster 
 simultaneously across multiple EC2 instances accumulates cost quickly. 
 Building the habit of tearing down resources after use and using 
@@ -733,7 +733,7 @@ infrastructure.
 
 ## Acknowledgements
 
-Based on the DevSecOps Netflix Clone project by 
+This project was introduced to me by Topteam Ltd led by [aloffawy](https://github.com/aloffawy). Based on the DevSecOps Netflix Clone project by 
 [N4si](https://github.com/N4si/DevSecOps-Project), extended with 
 additional phases, real-world debugging, and a dedicated monitoring 
 infrastructure.
