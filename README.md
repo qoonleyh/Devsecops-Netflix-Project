@@ -178,10 +178,15 @@ deployed the application using GitOps principles:
   in the repo and deployed to the cluster
 - Netflix app accessible at NodePort 30007 on EKS worker nodes
 
+The following terminal outputs confirm all Kubernetes resources 
+were running successfully across the cluster:
+
 ![ArgoCD Dashboard](screenshots/argocd-dashboard.png)
 ![ArgoCD App Healthy](screenshots/argocd-app-healthy.png)
 ![Netflix on Kubernetes](screenshots/netflix-kubernetes.png)
 ![Kubectl Nodes](screenshots/kubectl-nodes.png)
+![Kubectl Pods](screenshots/kubectl-pods.png)
+![Kubectl Services](screenshots/kubectl-services.png)
 
 
 
